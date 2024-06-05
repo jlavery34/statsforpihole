@@ -1,0 +1,51 @@
+html, body{
+    width: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    background-color: gray;
+}
+
+.statsbars{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top:30px;
+    padding-bottom: 30px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+#adsblocked{
+    background-color: red;
+}
+
+
+#domsblocked{
+    background-color: rgb(0, 174, 76);
+}
+
+
+#dnsqueries{
+    background-color: rgb(33, 176, 247);
+}
+
+
+#percentage{
+    background-color: rgb(255, 136, 0);
+}
+
+#header{
+    background-color: rgb(64, 9, 100);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color:white;
+    display: flex;
+    align-items: center;
+}
+
+
+#header img {
+    margin-right: 10px;
+}
