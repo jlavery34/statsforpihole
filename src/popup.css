@@ -49,3 +49,18 @@ html, body{
 #header img {
     margin-right: 10px;
 }
+
+#status{
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 1px;
+}
+#setsstats{
+    padding: 2px;
+}
+#options{
+    display: block;
+    width: 250px;
+    padding: 2px;
+}

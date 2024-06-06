@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link href="popup.css" rel="stylesheet"/>
+  <link href="popup.css" rel="stylesheet" />
   <title>API Data</title>
 </head>
+
 <body>
-    <div id="header">
-        <img src="../icons/pihole48.png" alt="pihole logo"/>
-        <h2>PiHole Stats</h2>
-    </div>
-  
+  <div id="header">
+    <img src="../icons/pihole48.png" alt="pihole logo" />
+    <h2>PiHole Stats</h2>
+
+  </div>
+
   <div id="adsblocked" class="statsbars">Loading...</div>
   <div id="dnsqueries" class="statsbars">Loading...</div>
   <div id="percentage" class="statsbars">Loading...</div>
   <div id="domsblocked" class="statsbars">Loading...</div>
+  <div id="options">
+    <button href="#" id="pausehole">30s</button>
+    <button href="#" id="pausehole60">60s</button>
+    <button href="#" id="pausehole5">5m</button>
+    <button href="#" id="pausehole30">30m</button>
+    <button href="#" id="resumehole">Resume</button>
 
-  <button href="#" id="settings-link">Settings</button>
-  <button href="#" id="pausehole">30s</button>
-  <button href="#" id="pausehole60">60s</button>
-  <button href="#" id="pausehole5">5m</button>
-  <button href="#" id="pausehole30">30m</button>
+  </div>
+  <div id="setsstats">
+    <span id="status" class="enableGreen"></span>
+    <button href="#" id="settings-link">Settings</button>
+  </div>
   <script src="popup.js"></script>
 </body>
+
 </html>
