@@ -46,11 +46,28 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('settings-link').addEventListener('click', function() {
         browser.runtime.openOptionsPage();
     });
-    
+    //30s
     document.getElementById('pausehole').addEventListener('click', function() {
         if(apiKey.apiKey && ipAddress.ipAddress){
-            fetch(`http://${ipAddress.ipAddress}/admin/api.php?disable=20&auth=${apiKey.apiKey}`)
-            .then(response => response.json())
+            fetch(`http://${ipAddress.ipAddress}/admin/api.php?disable=30&auth=${apiKey.apiKey}`)
+        }
+    });
+    //30 mins
+    document.getElementById('pausehole30').addEventListener('click', function() {
+        if(apiKey.apiKey && ipAddress.ipAddress){
+            fetch(`http://${ipAddress.ipAddress}/admin/api.php?disable=1800&auth=${apiKey.apiKey}`)
+        }
+    });
+    //1mins
+    document.getElementById('pausehole60').addEventListener('click', function() {
+        if(apiKey.apiKey && ipAddress.ipAddress){
+            fetch(`http://${ipAddress.ipAddress}/admin/api.php?disable=60&auth=${apiKey.apiKey}`)
+        }
+    });
+    //5mins
+    document.getElementById('pausehole5').addEventListener('click', function() {
+        if(apiKey.apiKey && ipAddress.ipAddress){
+            fetch(`http://${ipAddress.ipAddress}/admin/api.php?disable=300&auth=${apiKey.apiKey}`)
         }
     });
 });
