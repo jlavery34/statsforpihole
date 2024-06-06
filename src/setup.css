@@ -1,0 +1,25 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 300px;
+    color: rgb(255, 255, 255);
+}
+
+h1{
+    background-color: rgb(11, 158, 40);
+    color: white;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+#uheader{
+    background-color: rgb(161, 13, 13);
+    border-radius: 25px;
+    padding: 10px;
+}
+
+a{
+    color: mintcream;
+}

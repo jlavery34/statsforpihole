@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const fetchData = () => {
-        const apiKey = CONFIG.API_KEY;
-        const piIP = CONFIG.PI_IP;
-        fetch(`http://${piIP}/admin/api.php?summaryRaw&auth=${apiKey}`)
+    const fetchData = async () => {
+        try{
+            let apiKey = await browser.storage.local.get(['apiKey']); //must await, else a promise is returned 
+            let ipAddress = await browser.storage.local.get(['ipAddress']);
+            fetch(`http://${ipAddress.ipAddress}/admin/api.php?summaryRaw&auth=${apiKey.apiKey}`)
             .then(response => response.json())
             .then(data => {
                 if (data.domains_being_blocked) {
@@ -28,9 +29,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             })
             .catch(error => {
-                document.getElementById('api-data').textContent = 'Error fetching data';
+                document.getElementById('adsblocked').textContent = 'Error fetching data';
                 console.error('Error fetching data:', error);
             });
+        }
+        catch{
+            document.getElementById('adsblocked').textContent = 'Error linking to PiHole. Are you sure you are logged in?';
+        }
+        
     };
 
     fetchData();

@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Setup</title>
-<link rel="stylesheet" href="popup.css"/>
+<title>StatsPi Setup</title>
+<link rel="stylesheet" href="setup.css"/>
 </head>
 <body>
 <div class="container">
   <h1>Stats for PiHole</h1>
-  <p>To get your stats, you will need to add the local IP address of your PiHole plus an API key, which can be found on the PiHole Admin page -> Settings -> API -> Show API token. None of this information will leave your home network.</p>
+  <div id="uheader">
+  <p>To get your stats, you will need to add the local IP address of your PiHole plus an API key, which can be found on the <a href="http://pi.hole/admin/settings.php?tab=api">PiHole Admin page -> Settings -> API -> Show API token</a>. None of this information will leave your home network.</p>
   <form id="login-form">
     <input type="text" id="api-key" placeholder="Enter your API Key" required><br>
     <input type="text" id="ip-address" placeholder="Enter your Pi's IP Address" required><br>
     <button type="button" id="submit">Submit</button>
   </form>
+</div>
 </div>
 <script src="splash-screen.js"></script>
 </body>

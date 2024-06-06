@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     submitButton.addEventListener('click', function() {
       let apiKey = document.getElementById('api-key').value;
       let ipAddress = document.getElementById('ip-address').value;
-  
+
       fetch(`http://${ipAddress}/admin/api.php?auth=${apiKey}`)
         .then(response => {
           if (response.ok) {
@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
               apiKey: apiKey,
               ipAddress: ipAddress
             }).then(() => {
+              console.log(browser.storage.local.get(['apiKey']));
+              console.log(browser.storage.local.get('ipAddress'));
               alert('Connection successful! Your settings have been saved.');
             });
           } else {
