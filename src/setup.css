@@ -23,3 +23,11 @@ h1{
 a{
     color: mintcream;
 }
+
+input{
+    padding: 5px;
+}
+
+button{
+    padding: 5px;
+}

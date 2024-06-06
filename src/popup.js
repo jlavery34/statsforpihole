@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
+    var apiKey = '';
+    var ipAddress = '';
     const fetchData = async () => {
         try{
-            let apiKey = await browser.storage.local.get(['apiKey']); //must await, else a promise is returned 
-            let ipAddress = await browser.storage.local.get(['ipAddress']);
+            apiKey = await browser.storage.local.get(['apiKey']); //must await, else a promise is returned 
+            ipAddress = await browser.storage.local.get(['ipAddress']);
             fetch(`http://${ipAddress.ipAddress}/admin/api.php?summaryRaw&auth=${apiKey.apiKey}`)
             .then(response => response.json())
             .then(data => {
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.getElementById('dnsqueries').textContent = 'The "ads_blocked_today" field is not present in the API response.';
                 }
                 if (data.ads_percentage_today) {
-                    let percentage = parseFloat(data.ads_percentage_today.toFixed(1));
+                    let percentage = parseFloat(data.ads_percentage_today.toFixed(1)); //rounds it up to 1 decimal place
                     document.getElementById('percentage').textContent = `Percentage blocked: ${percentage}%`;
                 } else {
                     document.getElementById('percentage').textContent = 'The "ads_blocked_today" field is not present in the API response.';
@@ -45,6 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
         browser.runtime.openOptionsPage();
     });
     
+    document.getElementById('pausehole').addEventListener('click', function() {
+        if(apiKey.apiKey && ipAddress.ipAddress){
+            fetch(`http://${ipAddress.ipAddress}/admin/api.php?disable=20&auth=${apiKey.apiKey}`)
+            .then(response => response.json())
+        }
+    });
 });
-
-
