@@ -40,4 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     fetchData();
+
+    document.getElementById('settings-link').addEventListener('click', function() {
+        browser.runtime.openOptionsPage();
+    });
+    
 });
+
+

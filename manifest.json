@@ -25,6 +25,11 @@
     "web_accessible_resources": [
         "src/popup.html",
         "src/setup.html"
-      ]
+      ],
+      "options_ui": {
+        "page": "src/setup.html",
+        "open_in_tab": true
+      }
+      
   }
   
