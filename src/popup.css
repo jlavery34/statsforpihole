@@ -1,5 +1,5 @@
 html, body{
-    width: 250px;
+    width: 275px;
     font-family: Arial, Helvetica, sans-serif;
     color: green;
     background-color: gray;
@@ -57,10 +57,10 @@ html, body{
     padding: 1px;
 }
 #setsstats{
-    padding: 2px;
+    padding: 3px;
 }
 #options{
     display: block;
-    width: 250px;
+    width: 275px;
     padding: 2px;
 }

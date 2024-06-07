@@ -37,12 +37,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 })
                 .catch(error => {
+                    //uses the textboxes to display the errors
                     document.getElementById('adsblocked').textContent = 'Error fetching data';
+                    document.getElementById('dnsqueries').textContent = `Ensure you are on your PiHole's network`;
+                    document.getElementById('percentage').textContent = 'and your IP and API are set up correctly';
+                    document.getElementById('domsblocked').textContent = 'Click settings below to update your details';
+                    document.getElementById('status').textContent = 'Status: disconnected';
                     console.error('Error fetching data:', error);
                 });
         }
         catch {
+            document.getElementById('adsblocked').textContent = 'Error fetching data';
+            document.getElementById('dnsqueries').textContent = `Ensure you are on your PiHole's network`;
+            document.getElementById('percentage').textContent = 'and your IP and API are set up correctly';
+            document.getElementById('domsblocked').textContent = 'Click settings below to update your details';
             document.getElementById('adsblocked').textContent = 'Error linking to PiHole. Are you sure you are logged in?';
+            document.getElementById('status').textContent = 'Status: disconnected';
         }
     };
 
@@ -53,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fetchData();
 
-    
+
 
     document.getElementById('settings-link').addEventListener('click', function () {
         browser.runtime.openOptionsPage();
@@ -97,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
             await delay(500); //slight delay to ensure disable/enable is refreshed
             fetchData();
         }
-    }); 
+    });
 
 
 });

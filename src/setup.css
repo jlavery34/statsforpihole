@@ -7,11 +7,13 @@ body{
     color: rgb(255, 255, 255);
 }
 
-h1{
+.header{
     background-color: rgb(11, 158, 40);
     color: white;
     border-radius: 25px;
     padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 #uheader{
