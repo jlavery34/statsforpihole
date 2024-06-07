@@ -1,0 +1,1 @@
+StatsForPiHole is a FireFox extension to get statistics from a Pi-Hole about the number and percentage of ads being blocked, shows the current status of the Pi-Hole (enabled/disabled), and allows the user to pause the Pi-Hole for a specified period of time, and resume it when needed. It is a third-party extension and not associated with Pi-Hole itself. 
