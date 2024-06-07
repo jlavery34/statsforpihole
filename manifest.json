@@ -3,7 +3,13 @@
     "name": "Stats for PiHole",
     "version": "1.0",
     "description": "Fetches data from an API and displays it in a popup",
-    "homepage_url": "https://github.com/jlavery34/pistats",
+    "homepage_url": "https://github.com/jlavery34/statsforpihole",
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "fakeemailforid@example.com",
+        "strict_min_version": "79.0"
+      }
+    },
     "permissions": [
         "storage",
         "tabs",
@@ -29,7 +35,6 @@
       "options_ui": {
         "page": "src/setup.html",
         "open_in_tab": true
-      }
-      
+      }     
   }
   

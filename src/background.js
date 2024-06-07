@@ -13,6 +13,6 @@ function openSplashScreen() {
   }
   
 
-  browser.runtime.onInstalled.addListener(openSplashScreen);
+  browser.runtime.onInstalled.addListener(checkLogin);
   browser.runtime.onStartup.addListener(checkLogin);
   

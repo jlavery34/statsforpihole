@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
         catch {
             document.getElementById('adsblocked').textContent = 'Error linking to PiHole. Are you sure you are logged in?';
         }
-
     };
 
     //introduces a delay for disable/enable
@@ -53,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     fetchData();
+
+    
 
     document.getElementById('settings-link').addEventListener('click', function () {
         browser.runtime.openOptionsPage();
@@ -96,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
             await delay(500); //slight delay to ensure disable/enable is refreshed
             fetchData();
         }
-    });
+    }); 
 
 
 });
