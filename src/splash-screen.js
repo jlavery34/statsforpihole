@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }).then(() => {
               console.log(browser.storage.local.get(['apiKey']));
               console.log(browser.storage.local.get('ipAddress'));
-              alert('Connection successful! Your settings have been saved.');
+              alert('Successfully connected to your Pi-Hole! Your settings have been saved.');
             });
           } else {
-            alert('Connection failed. Please check your API key and IP address.');
+            alert('Connection failed. Please check that your API key is correct and your Pi-Hole is located at that IP address.');
           }
         }).catch(error => {
           alert('Error: ' + error);
